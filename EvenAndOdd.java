@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class EvenAndOdd extends getInput {
+public class EvenAndOdd extends getInput{
 	 int sum = 0;
 	 public static int player_score = 0;
 	 public static int other_score = 0;
@@ -22,8 +22,8 @@ public class EvenAndOdd extends getInput {
 	 	}	 		
 	 }
 
-	 void winner(String choice1, int BestNum) {
-	 	if(even_or_odd().equals(choice1)) {
+	 void winner(String choice, int BestNum) {
+	 	if(even_or_odd().equals(choice)) {
 	 		player_score++;
 	 		System.out.println("\nYou Win!\n");
 	 	}	
@@ -35,32 +35,6 @@ public class EvenAndOdd extends getInput {
 	 	System.out.println("Your score: " + player_score + "\tThe other player score: " + other_score);
 	 	if(player_score == BestNum) System.out.println("You are the Winner!!!\n");
 	 	else System.out.println("You lose the game...\n");
-	 }
-
-	 String getChoice() {
-	 	System.out.print("'O' for odd number, 'E' for even number\nChoose your number: ");
-	 	String choice = sc.next();
-	 	while(!"OE".contains(choice)) {
-	 		System.out.println("!!! Please follow the instruction and enter valid input !!!\n");
-	 		System.out.print("'O' for odd number, 'E' for even number\nChoose your number: ");
-	 		choice = sc.next();		
-	 	}
-	 	if(choice.equals("E")) 
-	 		System.out.println("----- your choice is even number, then the odd number left for the other player -----\n");
-	 	else
-	 		System.out.println("----- your choice is odd number, then the even number left for the other player -----\n"); 
-	 	return choice;
-	 }
-
-	 int getBestNum() {
-	 	System.out.print("Input best out of number (must be odd): ");
-		int best_score = sc.nextInt();
-		while(best_score % 2 == 0 || best_score < 1) {
-			System.out.println("!!! Please follow the instruction and enter valid input !!!\n");
-			System.out.print("Input best out of number (must be odd): ");
-			best_score = sc.nextInt();
-		}
-		return best_score;
 	 }
 
 	 int getPlayerNum() {
@@ -79,10 +53,11 @@ public class EvenAndOdd extends getInput {
 	 	EvenAndOdd game = new EvenAndOdd();
 
 		// Promot player choose from Even / Odd number.
-	 	String player_choice = game.getChoice();
+		System.out.println("'O' for odd number, 'E' for even number");
+	 	String player_choice = game.getPlayerChoice(4);
 
 	 	// Prompt best out of number
-		int target = game.getBestNum();
+		int target = game.getBestOfNumber();
 
 		while(player_score < target || other_score < target) {
 			// Promot player enter number from 1-5 
