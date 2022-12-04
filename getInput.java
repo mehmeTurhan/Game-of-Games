@@ -76,5 +76,70 @@ public class getInput {
 
         return numberOfSpoolsToPull;
       }
+    
+    
+      /*
+      * This is a utility method that prompts 
+      * player choices for guessTheNumber and returns
+      * value of the low point of range to caller
+      *
+      * @return integer to caller
+      */
+    public int getRangeLow() {
+
+        int rangeLow;
+        System.out.println("Select low number for range: ");
+        rangeLow = scanner.nextInt();
+        System.out.println("\n"); // formatting output
+
+        return rangeLow;
+
+    }
+
+      /*
+      * This is a utility method that prompts 
+      * player choices for guessTheNumber and returns
+      * value of the high point of range to caller
+      *
+      * @return integer to caller
+      */
+        public int getRangeHigh() {
+
+            int rangeHigh;
+            System.out.println("Select high number for range: ");
+            rangeHigh = scanner.nextInt();
+            System.out.println("\n"); // formatting output
+
+            return rangeHigh;
+    
+        }
+
+      /*
+      * This is a utility method that prompts and validates
+      * player choices for guessTheNumber and returns
+      * value of the number of guesses to caller
+      *
+      * @return integer to caller
+      */
+        public int getNumberOfGuesses(int rangeHigh, int rangeLow) {
+
+            int numGuesses;
+            final int MAX = (((rangeHigh - rangeLow) / 2) + 1);
+
+            System.out.println("Enter Number of Guesses"); // not specified in use cases BUT alluded to in description
+            numGuesses = scanner.nextInt();
+            System.out.println("\n"); // formatting output
+
+            while (numGuesses > MAX) {
+
+                System.out.println("Number of Guesses too large. Must be less than or equal to half of the range.");
+                System.out.println("Enter Number of Guesses");
+                numGuesses = scanner.nextInt();
+                System.out.println("\n"); // formatting output
+
+            }
+
+            return numGuesses;
+        }
 
 }
