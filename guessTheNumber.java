@@ -4,17 +4,16 @@
 
 import java.util.*;
 
-public class guessTheNumber {
+public class guessTheNumber extends getInput {
 
     // declare variables
     private int rangeLow;
-    private int rangeHigh;    //ADD A VARIABLE TO TRACK NUMBER OF GAMES WON BY EACH PLAYER UPDATE IT EVERYTIME A PLAYER WINS
+    private int rangeHigh;
     private int compGuess;
-    private int playerGuess;    //CAN THESE VARIABLE BE REDUCED??
+    private int playerGuess;
     private int numGuesses;
     private int numGuessesCounter = 0;
     private final int ONE = 1;
-    private final int TWO = 2;
     Scanner sc = new Scanner(System.in);
 
     private int getRandomInt(int min, int max) {
@@ -36,15 +35,9 @@ public class guessTheNumber {
     public void getRange() {
 
         System.out.println("Select a range of numbers (input 2 integers)");
-        rangeLow = sc.nextInt();
-        rangeHigh = sc.nextInt();
+        rangeLow = getRangeLow();
+        rangeHigh = getRangeHigh();
         System.out.println("\n"); // formatting output
-
-
-        /*
-         * if (rangeLow != integer)
-         *  ask!
-         */
 
         /*          TEST MODE
         System.out.println("\n"); // formatting output
@@ -59,20 +52,7 @@ public class guessTheNumber {
     // getNumGuesses method
     public void getNumGuesses() {
 
-        final int MAX = (((rangeHigh - rangeLow) / TWO) + ONE);
-
-        System.out.println("Enter Number of Guesses"); // not specified in use cases BUT alluded to in description
-        numGuesses = sc.nextInt();
-        System.out.println("\n"); // formatting output
-
-        while (numGuesses > MAX) {
-
-            System.out.println("Number of Guesses too large. Must be less than or equal to half of the range.");
-            System.out.println("Enter Number of Guesses");
-            numGuesses = sc.nextInt();
-            System.out.println("\n"); // formatting output
-
-        }
+        numGuesses = getNumberOfGuesses(rangeHigh, rangeLow);
 
         /*      TEST MODE
         System.out.println("Number of Guesses");
@@ -118,19 +98,19 @@ public class guessTheNumber {
 
 
         /*
-         *
-         *
-         *
+         * 
+         * 
+         * 
          * BE SURE TO REMOVE ON SUBMISSION TO OTHER TEAM
-         *
+         * 
          * added bug to this section:
-         *
+         * 
          * after the checkGuesses() method is called, it re-calls the getGuesses() method and tries again.
-         *
+         * 
          * BUT THE getGuesses() METHOD ALSO CHOOSES ANOTHER NUMBER FOR COMPUTER UPON EACH INCORRECT ANSWER
-         *
-         *
-         *
+         * 
+         * 
+         * 
          */
 
     }
@@ -144,7 +124,7 @@ public class guessTheNumber {
 
         }
         else {  // implies guess was incorrect
-
+    
             System.out.println("Incorrect Guess.");
             System.out.println("\n"); // formatting output
 
