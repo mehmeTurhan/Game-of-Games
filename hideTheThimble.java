@@ -5,15 +5,15 @@
 import java.util.*;
 
 public class hideTheThimble {
-
+   // score variable to keep track of many games each player won
     // declare variables
     int bestOfNum;
-    int playerScore = 0;
+    int playerScore = 0;     //ADD A VARIABLE TO TRACK NUMBER OF GAMES WON BY EACH PLAYER UPDATE IT EVERYTIME A PLAYER WINS
     int computerScore = 0;
     char computerHand;
     char playerHand;
     final char LEFTCHAR = 'L';
-    final char RIGHTCHAR = 'R';
+    final char RIGHTCHAR = 'R';  /// too many variables// maybe reduce them 0,1,2, R,L are can go to the code
     final int LEFTINT = 0;
     final int RIGHTINT = 1;
     final int INDEX_ZERO = 0;
@@ -36,7 +36,7 @@ public class hideTheThimble {
         System.out.println("\n"); // formatting output
 
     }
-
+/********************************THIS METHOD SHOULD BE REPLACE BY getBestOfNumber() IN getInput classs ********************/
     // getBestOfNum method:
     public void getBestOfNum() {
 
@@ -84,6 +84,7 @@ public class hideTheThimble {
     }
 
     public void getThimbleGuess() {
+      /********************************USER INPUT SHOULD BE READ BY USING BY USING getPlayerChoice() in getInput ********************/
 
         System.out.println("Select Hand, L or R");
         playerHand = sc.next().charAt(INDEX_ZERO);
@@ -107,7 +108,7 @@ public class hideTheThimble {
                 correct = true;
 
             } else { // implies user input is incorrect
-
+  /********************************USER INPUT SHOULD BE READ BY USING BY USING getPlayerChoice() in getInput ********************/
                 System.out.println("Input L or R");
                 playerHand = sc.next().charAt(INDEX_ZERO);
                 System.out.println("\n"); // formatting output

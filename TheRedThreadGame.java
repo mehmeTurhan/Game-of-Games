@@ -11,7 +11,7 @@
 
 import java.util.*;
 
-class TheRedThreadGame {
+class TheRedThreadGame extends getInput{
     private static int numOfThreads; // total number of threads
     private List<Integer> spoolsBox; // box containing the threads
     private boolean isComputerTheWinner; // computer flag
@@ -106,18 +106,19 @@ class TheRedThreadGame {
       int numberOfSpoolsToPull;
       int numberOfSpoolsOfPlayer1;
       int theWinner = 0;
-      System.out.print("Please draw less than half of total spools: ");
-      numberOfSpoolsToPull = scanner.nextInt();
-      userInputValidationChecks(numberOfSpoolsToPull);
+      // System.out.print("Please draw less than half of total spools: ");
+       numberOfSpoolsToPull = userInputValidationChecks();
+      // userInputValidationChecks(numberOfSpoolsToPull);
+
 
       // player inputs
       System.out.print("Please enter the number of spools to pull (Number between 1 - 10): ");
-      numberOfSpoolsOfPlayer1 = scanner.nextInt();
-      userInputValidationChecks(numberOfSpoolsToPull);
+      numberOfSpoolsOfPlayer1 = userInputValidationChecks();
+      //userInputValidationChecks(numberOfSpoolsToPull);
 
       while(numberOfSpoolsToPull != numberOfSpoolsOfPlayer1 ) {
-        System.out.print("Please the number of spools to pull should be the same as decided number (Number between 1 - 10): ");
-        numberOfSpoolsOfPlayer1 = scanner.nextInt();
+        System.out.print("Please the number of spools to pull should be the same as the decided number (Number between 1 - 10): ");
+        numberOfSpoolsOfPlayer1 = userInputValidationChecks();
       }
 
       fillTheContainerWithThreads(); // the box with values
@@ -155,10 +156,10 @@ class TheRedThreadGame {
 
       if(!getisComputerTheWinner() && !getisComputerTheWinner()){
          System.out.print("\nYour turn to pull. The Computer missed!!: ");
-           numberOfSpoolsOfPlayer1 = scanner.nextInt();
+           numberOfSpoolsOfPlayer1 = userInputValidationChecks();
             while(numberOfSpoolsToPull != numberOfSpoolsOfPlayer1 ) {
-               System.out.print("Please the number of spools to pull should be the same as decided number (Number between 1 -10): ");
-               numberOfSpoolsOfPlayer1 = scanner.nextInt();
+               System.out.print("Please the number of spools to pull must be the same as the decided number (Number between 1 -10): ");
+               numberOfSpoolsOfPlayer1 =userInputValidationChecks();
           }
           drawSpoolsForPlayer1(numberOfSpoolsOfPlayer1);
       }
@@ -168,13 +169,5 @@ class TheRedThreadGame {
       return theWinner; // winner determined
 
     }
-    /**
-    * Validates the player inputs
-    */
-    public void userInputValidationChecks(int numberOfSpoolsToPull) {
-      while(numberOfSpoolsToPull > 10 || numberOfSpoolsToPull < 1){
-          System.out.print("Please draw less than half of total spools: ");
-          numberOfSpoolsToPull = scanner.nextInt();
-      }
-    }
+  
 }

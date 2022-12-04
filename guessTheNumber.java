@@ -8,9 +8,9 @@ public class guessTheNumber {
 
     // declare variables
     private int rangeLow;
-    private int rangeHigh;
+    private int rangeHigh;    //ADD A VARIABLE TO TRACK NUMBER OF GAMES WON BY EACH PLAYER UPDATE IT EVERYTIME A PLAYER WINS
     private int compGuess;
-    private int playerGuess;
+    private int playerGuess;    //CAN THESE VARIABLE BE REDUCED??
     private int numGuesses;
     private int numGuessesCounter = 0;
     private final int ONE = 1;
@@ -118,19 +118,19 @@ public class guessTheNumber {
 
 
         /*
-         * 
-         * 
-         * 
+         *
+         *
+         *
          * BE SURE TO REMOVE ON SUBMISSION TO OTHER TEAM
-         * 
+         *
          * added bug to this section:
-         * 
+         *
          * after the checkGuesses() method is called, it re-calls the getGuesses() method and tries again.
-         * 
+         *
          * BUT THE getGuesses() METHOD ALSO CHOOSES ANOTHER NUMBER FOR COMPUTER UPON EACH INCORRECT ANSWER
-         * 
-         * 
-         * 
+         *
+         *
+         *
          */
 
     }
@@ -144,7 +144,7 @@ public class guessTheNumber {
 
         }
         else {  // implies guess was incorrect
-    
+
             System.out.println("Incorrect Guess.");
             System.out.println("\n"); // formatting output
 
