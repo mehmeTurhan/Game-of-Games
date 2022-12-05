@@ -5,6 +5,7 @@ public class EvenAndOddBug extends getInput{
 	 public static int player_score = 0;
 	 public static int other_score = 0;
 	 Scanner sc = new Scanner(System.in);
+	 private int isTheWinner;
 
 	 void getSum(int num1, int num2) {
 	 	sum = num1 + num2;
