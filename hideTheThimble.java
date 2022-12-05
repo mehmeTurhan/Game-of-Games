@@ -71,7 +71,7 @@ public class hideTheThimble extends getInput {
 
     public void getThimbleGuess() {
 
-        playerHand = getPlayerChoice(2).charAt(0);
+        playerHand = getPlayerChoiceHideTheThimble();
 
         /*
          * TEST MODE
