@@ -1,10 +1,14 @@
 /**
- * Class:coinFlip
+ * Class:coinFlipTest
  * This class implements 'Coin Flip' game. In this game, player is playing
  * against the computer. Player guesses heads or tails and computer flips the coin
  * if player guesses right, then player gets a point, if guessed wrong
  * computer gets a point. Whoever raches the (best out of number / 2)+1
- * they win the game
+ * they win the game. 
+ * 
+ * In this mode, the result of the flip is displayed before the pick
+ * allowing user to cheat.
+ * 
  * @author: Mehmet Turhan   
  * @version 1.0 , 11/30/2022
  *
@@ -13,7 +17,7 @@
 
 import java.util.Random;
 
-public class coinFlip extends getInput {
+public class coinFlipTest extends getInput {
   public static int playerScore=0;   
   public static int computerScore=0;
   //choice for getPlayer choice class designed for coin flip game
@@ -83,8 +87,8 @@ public class coinFlip extends getInput {
 //     int numFlip=0;
 //     int bestOutofNumber = getBestNumber();
 //     while(!(checkFlipsVsBestNum(bestOutofNumber, numFlip))){
+//         flip = flipCoin(); //flip and display before the pick
 //         pick = getPlayerPick();
-//         flip = flipCoin();
 //         numFlip += 1;
 //         System.out.println(displayScoreboard(pick, flip));
 //         if(playerScore > (bestOutofNumber/2)){
