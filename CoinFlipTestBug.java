@@ -6,8 +6,7 @@
  * computer gets a point. Whoever raches the (best out of number / 2)+1
  * they win the game
  * 
- * In this mode, the result of the flip is displayed before the pick
- * allowing user to cheat.
+ * In this mode, we added some bugs for other group to test and find the bugs.
  * 
  * @author: Mehmet Turhan   
  * @version 1.0 , 11/30/2022
@@ -17,12 +16,12 @@
 
 import java.util.Random;
 
-public class CoinFlipTest extends getInput {
+public class CoinFlipTestBug extends getInput {
   public static int playerScore=0;   
   public static int computerScore=0;
   private int isTheWinner;
     
-    public CoinFlipTest() {
+    public CoinFlipTestBug() {
         playerScore = 0;
         computerScore = 0;
         isTheWinner = 0;
@@ -55,7 +54,7 @@ public class CoinFlipTest extends getInput {
             return  "H";
         }
         else{
-            System.out.println("The result of the flip is T");
+            System.out.println("The result of the flip is H");
             return "T";
         }
 
@@ -96,12 +95,12 @@ public class CoinFlipTest extends getInput {
         pick = getPlayerPick();
         numFlip += 1;
         System.out.println(displayScoreboard(pick, flip));
-        if(playerScore > (bestOutofNumber/2)){
+        if(playerScore == (bestOutofNumber/2)){
             isTheWinner = 1;
             System.out.println("Player 1 Wins");
             break;
         }
-        else if(computerScore > (bestOutofNumber/2) || (checkFlipsVsBestNum(bestOutofNumber, numFlip))){
+        else if((checkFlipsVsBestNum(bestOutofNumber, numFlip))){
             isTheWinner = 2;
             System.out.println("Player 1 Loses");
             break;
