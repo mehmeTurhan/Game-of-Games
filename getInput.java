@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class getInput {
 
     private int bestOutOfNumber; // this is a value for: hideTheThimble, coinFlip, and EvenAndOdd
-    private String playerChoice; //player choice for hideTheThimble, coinFlip, and EvenAndOdd
+    private String playerChoice; //player choice for hideTheThimble, coinFlip
     private int numberOfSpoolsToPull;
     private Scanner scanner;
 
@@ -35,40 +35,28 @@ public class getInput {
       /*
       * This is a utility method that prompts and validates
       * player choices for hideTheThimble and coinFlip from the user and return
-      * value to the caller of: hideTheThimble, coinFlip, and EvenAndOdd
+      * value to the caller of: hideTheThimble, coinFlip
       *
       * @return an a string to the caller
       */
-      public String getPlayerChoice(int theChoice) {
+      public String getPlayerChoice(int theChoice){
 
-          if (theChoice == 1) {
+          if (theChoice == 1){
             System.out.print("Select choice, H or T: ");
             playerChoice = scanner.next();
             while (!("HT".contains(playerChoice)) ){
-                System.out.println("!!! Please follow the instruction and enter valid input !!!\n");
-                System.out.print("Input H or T: ");
-                playerChoice = scanner.next();
+                    System.out.print("Input H or T: ");
+                    playerChoice = scanner.next();
             }
-          } 
-
-          else if (theChoice == 2) {
-            System.out.print("Select Hand, L or R: ");
-            playerChoice = scanner.next();
-            while (!("LR".contains(playerChoice)) ){
-                System.out.println("!!! Please follow the instruction and enter valid input !!!\n");
-                System.out.print("Select Hand, L or R: ");
+          } else {
+            if (theChoice == 2){
+              System.out.print("Select Hand, L or R: ");
+              playerChoice = scanner.next();
+              while (!("LR".contains(playerChoice)) ){
+                System.out.println("Select Hand, L or R: ");
                 playerChoice = scanner.next();
               }
             }
-
-          else if (theChoice == 4) {
-            System.out.print("Select number, O or E: ");
-            playerChoice = scanner.next();
-            while (!("OE".contains(playerChoice)) ){
-                System.out.println("!!! Please follow the instruction and enter valid input !!!\n");
-                System.out.print("Select number, O or E: ");
-                playerChoice = scanner.next();
-              }
           }
 
           return playerChoice;
@@ -88,8 +76,9 @@ public class getInput {
 
         return numberOfSpoolsToPull;
       }
-    
-    
+
+
+
       /*
       * This is a utility method that prompts 
       * player choices for guessTheNumber and returns
@@ -108,6 +97,8 @@ public class getInput {
 
     }
 
+
+
       /*
       * This is a utility method that prompts 
       * player choices for guessTheNumber and returns
@@ -125,6 +116,9 @@ public class getInput {
             return rangeHigh;
     
         }
+
+
+        
 
       /*
       * This is a utility method that prompts and validates
