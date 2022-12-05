@@ -1,6 +1,13 @@
-/*
- * header
- */
+/**
+ * Class: guessTheNumber
+ * This class implements 'Guess the Number' game. In this game, player is playing
+ * against the computer. Player guesses a number in the range, and the computer chooses a number in the range.
+ * if player guesses right, they win! IF not, they have a certain amount of tries before they lose.
+ * If they are unable to guess correctly, the computer wins.
+ * @author: Lucas Stowe  
+ * @version 1.0 , 11/30/2022
+ *
+*/
 
 import java.util.*;
 
@@ -40,14 +47,6 @@ public class guessTheNumber extends getInput {
         rangeHigh = getRangeHigh();
         System.out.println("\n"); // formatting output
 
-        /*          TEST MODE
-        System.out.println("\n"); // formatting output
-        System.out.println("Range Low:"); // formatting output
-        System.out.println(rangeLow); // formatting output
-        System.out.println("Range High: "); // formatting output
-        System.out.println(rangeHigh); // formatting output
-        */
-
     }
 
     // getNumGuesses method
@@ -55,11 +54,6 @@ public class guessTheNumber extends getInput {
 
         numGuesses = getNumberOfGuesses(rangeHigh, rangeLow);
 
-        /*      TEST MODE
-        System.out.println("Number of Guesses");
-        System.out.print(numGuesses);
-        System.out.println("\n"); // formatting output
-        */
     }
 
     /*
@@ -87,32 +81,6 @@ public class guessTheNumber extends getInput {
 
         // call checkGuesses
         checkGuesses();
-
-        /*           TEST MODE
-        System.out.println("user guess:"); // formatting output
-        System.out.println(guessNum); // formatting output
-        System.out.println("comp guess:"); // formatting output
-        System.out.println(actualNum); // formatting output
-        */
-
-
-
-
-        /*
-         * 
-         * 
-         * 
-         * BE SURE TO REMOVE ON SUBMISSION TO OTHER TEAM
-         * 
-         * added bug to this section:
-         * 
-         * after the checkGuesses() method is called, it re-calls the getGuesses() method and tries again.
-         * 
-         * BUT THE getGuesses() METHOD ALSO CHOOSES ANOTHER NUMBER FOR COMPUTER UPON EACH INCORRECT ANSWER
-         * 
-         * 
-         * 
-         */
 
     }
 
