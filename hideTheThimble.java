@@ -4,16 +4,16 @@
 
 import java.util.*;
 
-public class hideTheThimble {
-   // score variable to keep track of many games each player won
+public class hideTheThimble extends getInput {
+
     // declare variables
     int bestOfNum;
-    int playerScore = 0;     //ADD A VARIABLE TO TRACK NUMBER OF GAMES WON BY EACH PLAYER UPDATE IT EVERYTIME A PLAYER WINS
+    int playerScore = 0;
     int computerScore = 0;
     char computerHand;
     char playerHand;
     final char LEFTCHAR = 'L';
-    final char RIGHTCHAR = 'R';  /// too many variables// maybe reduce them 0,1,2, R,L are can go to the code
+    final char RIGHTCHAR = 'R';
     final int LEFTINT = 0;
     final int RIGHTINT = 1;
     final int INDEX_ZERO = 0;
@@ -36,28 +36,14 @@ public class hideTheThimble {
         System.out.println("\n"); // formatting output
 
     }
-/********************************THIS METHOD SHOULD BE REPLACE BY getBestOfNumber() IN getInput classs ********************/
+
+
+
     // getBestOfNum method:
     public void getBestOfNum() {
 
-        System.out.println("Select a best out of number, must be odd");
-        bestOfNum = sc.nextInt();
+        bestOfNum = getBestOfNumber();
         System.out.println("\n"); // formatting output
-
-        // make sure its odd
-        while ((bestOfNum % TWO) == ZERO) {
-
-            System.out.println("Select an Odd number");
-            bestOfNum = sc.nextInt();
-            System.out.println("\n"); // formatting output
-
-        }
-
-        /*
-         * TEST MODE
-         * System.out.println("Best out of Number: " + bestOfNum); // formatting output
-         * System.out.println("\n"); // formatting output
-         */
 
     }
 
@@ -84,42 +70,8 @@ public class hideTheThimble {
     }
 
     public void getThimbleGuess() {
-      /********************************USER INPUT SHOULD BE READ BY USING BY USING getPlayerChoice() in getInput ********************/
 
-        System.out.println("Select Hand, L or R");
-        playerHand = sc.next().charAt(INDEX_ZERO);
-        System.out.println("\n"); // formatting output
-        System.out.println("User Guess: " + playerHand + "\n");
-
-        // determine correct input
-
-        boolean correct = false;
-        int isleft = (Character.compare(playerHand, LEFTCHAR));
-        int isright = (Character.compare(playerHand, RIGHTCHAR));
-
-        while (correct == false) {
-
-            if (isleft == ZERO) { // user input is 'L'
-
-                correct = true;
-
-            } else if (isright == ZERO) { // user input is 'R'
-
-                correct = true;
-
-            } else { // implies user input is incorrect
-  /********************************USER INPUT SHOULD BE READ BY USING BY USING getPlayerChoice() in getInput ********************/
-                System.out.println("Input L or R");
-                playerHand = sc.next().charAt(INDEX_ZERO);
-                System.out.println("\n"); // formatting output
-
-                // update values
-                isleft = (Character.compare(playerHand, LEFTCHAR));
-                isright = (Character.compare(playerHand, RIGHTCHAR));
-
-            }
-
-        }
+        playerHand = getPlayerChoice(2).charAt(0);
 
         /*
          * TEST MODE
