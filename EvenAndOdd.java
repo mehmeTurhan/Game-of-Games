@@ -63,20 +63,20 @@ public class EvenAndOdd extends getInput{
 	 	return number;
 	 }
 
-	 public static void main(String[] args) {
+	 public int playEvenOrOdd() {
 	 	System.out.println("\nThe players choose even or odd.They remain even or odd for the whole game; they cannot change from throw to throw. Values from 1-5 are valid throws. The user will specify the “best out of number” for the game. For instance, if they choose 7, the first player to win 4 throws wins the game. The “best of number” chosen must be odd.\n");
 	 	EvenAndOdd game = new EvenAndOdd();
 
 		// Promot player choose from Even / Odd number.
 	//	System.out.println("'O' for odd number, 'E' for even number");
 
-		 	// Prompt best out of number
+		 	// Prompt est out of number
 	  int target = game.getBestOfNumber();
 		// Promot player choose from Even / Odd number.
 	//	System.out.println("'O' for odd number, 'E' for even number");
 	 	String player_choice = game.getPlayerChoiceEvenOROdd();
 
-
+    //System.out.println(player_choice);
 		while(player_score < target || other_score < target) {
 			// Promot player enter number from 1-5
 	 		int player_number = game.getPlayerNum();
@@ -89,7 +89,12 @@ public class EvenAndOdd extends getInput{
       game.winner(player_choice, target);
 
         	// End loop
-        	if(player_score == target || other_score == target) break;
+        	if(player_score > target/2 || other_score > target/2){
+						isTheWinner = player_score > other_score ? 1 : 2;
+						break;
+					}
 		}
+
+		return isTheWinner;
 	 }
 }

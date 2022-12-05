@@ -5,7 +5,7 @@
  * if player guesses right, then player gets a point, if guessed wrong
  * computer gets a point. Whoever raches the (best out of number / 2)+1
  * they win the game
- * @author: Mehmet Turhan   
+ * @author: Mehmet Turhan
  * @version 1.0 , 11/30/2022
  *
 */
@@ -14,10 +14,10 @@
 import java.util.Random;
 
 class CoinFlip extends getInput {
-  public static int playerScore=0;   
+  public static int playerScore=0;
   public static int computerScore=0;
   private int isTheWinner;
-    
+
     public CoinFlip() {
         playerScore = 0;
         computerScore = 0;
@@ -33,7 +33,7 @@ class CoinFlip extends getInput {
         int bestOutofNumber = getBestOfNumber();
         return bestOutofNumber;
     }
-    
+
     //gets the player's pick using getPlayerChoice(theChoice) from getInput class
     public String getPlayerPick(){
         String playerPick = getPlayerChoiceCoinFlip();
@@ -80,7 +80,7 @@ class CoinFlip extends getInput {
 
 //Code test in main
    public int playCoinFlip() {
-    gameDisplay();  
+    gameDisplay();
     String pick="";
     String flip="";
 

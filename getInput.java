@@ -22,7 +22,7 @@ public class getInput {
     */
 
     public int getBestOfNumber() {
-        System.out.println("Select a best out of number, must be odd: ");
+        System.out.print("Select a best out of number, must be odd: ");
         bestOutOfNumber = scanner.nextInt();
         while (bestOutOfNumber % 2 == 0) {
             System.out.print("Select an Odd number: ");

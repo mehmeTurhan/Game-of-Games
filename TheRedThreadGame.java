@@ -91,7 +91,6 @@ class TheRedThreadGame extends getInput{
             }
             //System.out.println("Index" + randomIndex + " Value:" +  spoolDrawn);
             numOfThreads = numOfThreads - 1; // reduced the spools index
-            System.out.println("Threads left: " + numOfThreads);
             if(numOfThreads != 0) {
               randomIndex = random.nextInt(numOfThreads);// generate new random index
             }
@@ -129,31 +128,28 @@ class TheRedThreadGame extends getInput{
       drawSpoolsForTheComputer(numberOfSpoolsToPull); // Computer draws the spools
       // if player 1 won
       if(getisPlayer1TheWinner()) {
-        System.out.println("You Won 🎊🎊 🔥🔥🔥🔥 ");
+        System.out.println("You Won!");
         return 1;
       }
       // check if the Computer won
       if(getisComputerTheWinner()){
-        System.out.println("The Computer Won 🍾🍾🍾🍾");
+        System.out.println("The Computer Won.");
         return 2;
       }
     // keeps checking as long as there no winner yet
       while(!spoolsBox.isEmpty()) {
           if(getisPlayer1TheWinner()){
-            System.out.println("You Won 🎊🎊 🔥🔥🔥🔥 ");
-            System.out.println("\n"+spoolsBox);
+            System.out.println("You Won!");
             theWinner = 1;
             break;
           } else if(getisComputerTheWinner()) {
-            System.out.println("The Computer Won 🍾🍾🍾🍾");
-            System.out.println(spoolsBox);
+            System.out.println("The Computer Won!");
             theWinner = 2;
             break;
           }
       // No winner yet, Player 1 pulls more spools
       if(!getisPlayer1TheWinner() && !getisComputerTheWinner()){
        System.out.println("\nYou missed. The Computer pulled " + numberOfSpoolsToPull + " spool(s).");
-       System.out.println(spoolsBox);
        drawSpoolsForTheComputer(numberOfSpoolsToPull);
      }
 

@@ -32,11 +32,8 @@ public class hideTheThimble extends getInput {
     // start display method
     public void startDisplay() {
 
-        System.out.println(
-                "The players will specify the 'best out of number' for the game. For instance, if they choose 7, a player will win the game if they successfully guess the hand holding the thimble 4 or more times. The 'best out of number' chosen must be odd");
-        System.out.println("\n"); // formatting output
-
-    }
+        System.out.println("The players will specify the 'best out of number' for the game. For instance, if they choose 7, a player will win the game if they successfully guess the hand holding the thimble 4 or more times. The 'best out of number' chosen must be odd");
+      }
 
 
 
@@ -44,7 +41,6 @@ public class hideTheThimble extends getInput {
     public void getBestOfNum() {
 
         bestOfNum = getBestOfNumber();
-        System.out.println("\n"); // formatting output
 
     }
 
@@ -79,7 +75,7 @@ public class hideTheThimble extends getInput {
          * System.out.println("User Guess: " + playerHand + "\n");
          */
 
-        displayScoreboard();
+        //displayScoreboard();
         checkGuess();
 
     }
@@ -103,7 +99,7 @@ public class hideTheThimble extends getInput {
             // + 1
             if (playerScore == bestOfNum) {
 
-                displayScoreboard();
+                //displayScoreboard();
                 winner = 1;
 
             } else { // implies best of num not reached yet...
@@ -120,7 +116,7 @@ public class hideTheThimble extends getInput {
             // computer + 1
             if (computerScore == bestOfNum) {
 
-                displayScoreboard();
+                //displayScoreboard();
                 winner = 2;
 
             } else { // implies best of num not reached yet...
@@ -128,7 +124,6 @@ public class hideTheThimble extends getInput {
                 putThimble();
 
             }
-
         }
 
     }

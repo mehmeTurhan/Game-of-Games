@@ -15,6 +15,7 @@ class PlayGames {
        CoinFlip coinFlipGame;
        hideTheThimble hideTheThimble;
        guessTheNumber guessTheNumber;
+       EvenAndOdd even_or_odd;
 
       System.out.println("\n!!!Play the Game of Games!!!\n");
       //displayTheGamesOfGamesMenu();
@@ -29,41 +30,26 @@ class PlayGames {
           System.out.println("\nYou are playing the Hide The Thimble Game!\n");
           hideTheThimble = new hideTheThimble();
           winner = hideTheThimble.playhideTheThimble();
-          //winner = hideTheThimble.playCoinFlip();
-          player1Score = GamesOfGamesScoreboard[gameChoice - 1][0];
-          computerScore = GamesOfGamesScoreboard[gameChoice - 1][1];
-          System.out.println(winner);
+          hideTheThimble.displayScoreboard();
+          scoreboard(winner, gameChoice, GamesOfGamesScoreboard);
             break;
           case 2:
             System.out.println("\nYou are playing the Coin Flip Game!\n");
             coinFlipGame = new CoinFlip();
             winner = coinFlipGame.playCoinFlip();
-            player1Score = GamesOfGamesScoreboard[gameChoice - 1][0];
-            computerScore = GamesOfGamesScoreboard[gameChoice - 1][1];
-            System.out.println(winner);
-
-            if(winner == 1) {
-             player1Score = player1Score + 1;
-             GamesOfGamesScoreboard[gameChoice - 1][0] = player1Score;
-             System.out.println("You Won " + GamesOfGamesScoreboard[gameChoice - 1][0] + " times.");
-            }else if(winner == 2) {
-              computerScore = computerScore + 1;
-              GamesOfGamesScoreboard[gameChoice - 1][1] = computerScore;
-              System.out.println("The Computer Won " + GamesOfGamesScoreboard[gameChoice - 1][1] + " times.");
-            }
+            scoreboard(winner, gameChoice, GamesOfGamesScoreboard);
             break;
           case 3:
             System.out.println("\nYou are playing the Guess the Number!\n");
             guessTheNumber = new guessTheNumber();
             winner = guessTheNumber.playGuessTheNumber();
-            player1Score = GamesOfGamesScoreboard[gameChoice - 1][0];
-            computerScore = GamesOfGamesScoreboard[gameChoice - 1][1];
-            System.out.println(winner);
-
+            scoreboard(winner, gameChoice, GamesOfGamesScoreboard);
             break;
           case 4:
-
-
+            System.out.println("\nYou are playing the Even and Odd Game!\n");
+            even_or_odd = new EvenAndOdd();
+            winner = even_or_odd.playEvenOrOdd();
+            scoreboard(winner, gameChoice, GamesOfGamesScoreboard);
             break;
           case 5:
                 System.out.println("\nYou are playing the Red Thread Game!\n");
@@ -87,17 +73,62 @@ class PlayGames {
         }
       } while(gameChoice != 6);
 
-     // games play repeatly until 'quit'
-       // after each game, scoreboard displays: # wins / # losses for each player
-    // on quit: overall games wons / lost by each player
-    // Displays the final winer 🏆🏆🏆🏆 of all games
+      finalScoreboard(gameChoice, GamesOfGamesScoreboard);
+  }
+
+
+  public static void scoreboard(int winner, int gameChoice, int [][] GamesOfGamesScoreboard) {
+                player1Score = GamesOfGamesScoreboard[gameChoice - 1][0];
+                computerScore = GamesOfGamesScoreboard[gameChoice - 1][1];
+                if(winner == 1) {
+                 player1Score = player1Score + 1;
+                 GamesOfGamesScoreboard[gameChoice - 1][0] = player1Score;
+                 if(gameChoice == 5) {
+                   System.out.println("You Won " + GamesOfGamesScoreboard[gameChoice - 1][0]);
+                 }
+                }else if(winner == 2) {
+                  computerScore = computerScore + 1;
+                  GamesOfGamesScoreboard[gameChoice - 1][1] = computerScore;
+                  if(gameChoice == 5) {
+                    System.out.println("The Computer Won " + GamesOfGamesScoreboard[gameChoice - 1][1]);
+                  }
+
+                }
+
+  }
+
+  public static void finalScoreboard( int gameChoice, int [][] GamesOfGamesScoreboard) {
+
+                // int playerTotalScore = 0;
+                // int computerTotalScore = 0;
+                int gamesWonByComputer = 0;
+                int gamesWonByThePlayer = 0;
+                for(int i = 0; i < GamesOfGamesScoreboard.length; i++){
+                    if(GamesOfGamesScoreboard[i][0] > GamesOfGamesScoreboard[i][1]){
+                      gamesWonByThePlayer = gamesWonByThePlayer + 1;
+                      System.out.println("Player: " + GamesOfGamesScoreboard[i][0] );
+                    }else {
+                      gamesWonByComputer = gamesWonByComputer + 1;
+                      System.out.println("Computer: " + GamesOfGamesScoreboard[i][1] );
+                    }
+                    // playerTotalScore = GamesOfGamesScoreboard[i][0];
+                    // computerTotalScore += GamesOfGamesScoreboard[i][1];
+                }
+              //  System.out.println("Computer: " + computerTotalScore + "PLAYER: " + playerTotalScore);
+                if(gamesWonByThePlayer > gamesWonByComputer) {
+                  System.out.println("You are the winner. You won " + gamesWonByThePlayer + "/" + GamesOfGamesScoreboard.length + " games.");
+                  System.out.println("You Lost " + (GamesOfGamesScoreboard.length - gamesWonByThePlayer) + "/" + GamesOfGamesScoreboard.length);
+                } else {
+                    System.out.println("The Computer Won. It Won " + gamesWonByComputer + "/" + GamesOfGamesScoreboard.length);
+                    System.out.println("It Lost " + (GamesOfGamesScoreboard.length -  gamesWonByComputer) + "/" + GamesOfGamesScoreboard.length);
+                }
   }
 
   public static void displayTheGamesOfGamesMenu(){
 
     System.out.println("Please enter the game to play or quit the Games of Games: \n");
     System.out.println("1. Find the Thimble.");
-    System.out.println("2. Coinf Flip.");
+    System.out.println("2. Coin Flip.");
     System.out.println("3. Guess the Number.");
     System.out.println("4. Even and Odd.");
     System.out.println("5. Find the Red Thread.");
