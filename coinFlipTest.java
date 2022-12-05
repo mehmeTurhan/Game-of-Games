@@ -17,7 +17,7 @@
 
 import java.util.Random;
 
-public class CoinFlipTest extends getInput {
+class CoinFlipTest extends getInput {
   public static int playerScore=0;   
   public static int computerScore=0;
   private int isTheWinner;
