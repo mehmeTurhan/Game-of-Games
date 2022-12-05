@@ -20,6 +20,7 @@ public class hideTheThimble extends getInput {
     final int ZERO = 0;
     final int ONE = 1;
     final int TWO = 2;
+    int winner;
     Scanner sc = new Scanner(System.in);
 
     private int getRandomInt(int min, int max) {
@@ -103,7 +104,7 @@ public class hideTheThimble extends getInput {
             if (playerScore == bestOfNum) {
 
                 displayScoreboard();
-                // implement here
+                winner = 1;
 
             } else { // implies best of num not reached yet...
 
@@ -120,7 +121,7 @@ public class hideTheThimble extends getInput {
             if (computerScore == bestOfNum) {
 
                 displayScoreboard();
-                // implement here
+                winner = 2;
 
             } else { // implies best of num not reached yet...
 
@@ -132,12 +133,13 @@ public class hideTheThimble extends getInput {
 
     }
 
-    public static void main(String[] args) {
+    public int playhideTheThimble () {
 
-        hideTheThimble game = new hideTheThimble();
-        game.startDisplay();
-        game.getBestOfNum();
-        game.putThimble();
+        startDisplay();
+        getBestOfNum();
+        putThimble();
+
+        return winner;
 
     }
 

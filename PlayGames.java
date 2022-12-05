@@ -14,6 +14,7 @@ class PlayGames {
        TheRedThreadGame redThreadGame;
        CoinFlip coinFlipGame;
        hideTheThimble hideTheThimble;
+       guessTheNumber guessTheNumber;
 
       System.out.println("\n!!!Play the Game of Games!!!\n");
       //displayTheGamesOfGamesMenu();
@@ -27,9 +28,7 @@ class PlayGames {
           case 1:
           System.out.println("\nYou are playing the Hide The Thimble Game!\n");
           hideTheThimble = new hideTheThimble();
-          hideTheThimble.startDisplay();
-          //hideTheThimble.getBestOfNum();
-          hideTheThimble.putThimble();
+          winner = hideTheThimble.playhideTheThimble();
           //winner = hideTheThimble.playCoinFlip();
           player1Score = GamesOfGamesScoreboard[gameChoice - 1][0];
           computerScore = GamesOfGamesScoreboard[gameChoice - 1][1];
@@ -44,7 +43,7 @@ class PlayGames {
             System.out.println(winner);
 
             if(winner == 1) {
-              player1Score = player1Score + 1;
+             player1Score = player1Score + 1;
              GamesOfGamesScoreboard[gameChoice - 1][0] = player1Score;
              System.out.println("You Won " + GamesOfGamesScoreboard[gameChoice - 1][0] + " times.");
             }else if(winner == 2) {
@@ -54,6 +53,12 @@ class PlayGames {
             }
             break;
           case 3:
+            System.out.println("\nYou are playing the Guess the Number!\n");
+            guessTheNumber = new guessTheNumber();
+            winner = guessTheNumber.playGuessTheNumber();
+            player1Score = GamesOfGamesScoreboard[gameChoice - 1][0];
+            computerScore = GamesOfGamesScoreboard[gameChoice - 1][1];
+            System.out.println(winner);
 
             break;
           case 4:
@@ -99,6 +104,5 @@ class PlayGames {
     System.out.println("6. Or Quit the Games of Games.\n");
     System.out.print("Enter your choice: ");
   }
-
 
 }
