@@ -13,6 +13,7 @@ public class guessTheNumber extends getInput {
     private int playerGuess;
     private int numGuesses;
     private int numGuessesCounter = 0;
+    private int winner;
     private final int ONE = 1;
     Scanner sc = new Scanner(System.in);
 
@@ -120,7 +121,7 @@ public class guessTheNumber extends getInput {
         if (compGuess == playerGuess){
 
             System.out.println("Guess Correct! Player wins!");
-            // break to end, update scoreboard in main
+            winner = 1;
 
         }
         else {  // implies guess was incorrect
@@ -139,7 +140,7 @@ public class guessTheNumber extends getInput {
             else {  // implies max guesses has been reached
 
                 System.out.println("You lose!");
-                // break to end, update scoreboard in main
+                winner = 2;
 
             }
 
@@ -147,14 +148,14 @@ public class guessTheNumber extends getInput {
 
     }
 
-    public static void main(String[] args) {
+    public int playGuessTheNumber() {
 
-        guessTheNumber game = new guessTheNumber();
-        game.startDisplay();
-        game.getRange();
-        game.getNumGuesses();
-        game.getGuesses();
+        startDisplay();
+        getRange();
+        getNumGuesses();
+        getGuesses();
 
+        return winner;
     }
 
 }
