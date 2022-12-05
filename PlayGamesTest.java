@@ -1,5 +1,5 @@
 import java.util.*;
-class PlayGames {
+class PlayGamesTest {
 
   private static int player1Score;
   private static int computerScore;
@@ -11,11 +11,11 @@ class PlayGames {
       // System.out.print("Enter the number of spools to draw (Number between 1 - 10): ");
 
       // game objects
-       TheRedThreadGame redThreadGame;
-       CoinFlip coinFlipGame;
-       hideTheThimble hideTheThimble;
-       guessTheNumber guessTheNumber;
-       EvenAndOdd even_or_odd;
+       TheRedThreadGameTest redThreadGame;
+       CoinFlipTest coinFlipGame;
+       hideTheThimbleTest hideTheThimble;
+       guessTheNumberTest guessTheNumber;
+       EvenAndOddTest even_or_odd;
 
       System.out.println("\n!!!Play the Game of Games!!!\n");
       //displayTheGamesOfGamesMenu();
@@ -28,32 +28,32 @@ class PlayGames {
         switch (gameChoice) {
           case 1:
           System.out.println("\nYou are playing the Hide The Thimble Game!\n");
-          hideTheThimble = new hideTheThimble();
+          hideTheThimble = new hideTheThimbleTest();
           winner = hideTheThimble.playhideTheThimble();
           hideTheThimble.displayScoreboard();
           scoreboard(winner, gameChoice, GamesOfGamesScoreboard);
             break;
           case 2:
             System.out.println("\nYou are playing the Coin Flip Game!\n");
-            coinFlipGame = new CoinFlip();
+            coinFlipGame = new CoinFlipTest();
             winner = coinFlipGame.playCoinFlip();
             scoreboard(winner, gameChoice, GamesOfGamesScoreboard);
             break;
           case 3:
             System.out.println("\nYou are playing the Guess the Number!\n");
-            guessTheNumber = new guessTheNumber();
+            guessTheNumber = new guessTheNumberTest();
             winner = guessTheNumber.playGuessTheNumber();
             scoreboard(winner, gameChoice, GamesOfGamesScoreboard);
             break;
           case 4:
             System.out.println("\nYou are playing the Even and Odd Game!\n");
-            even_or_odd = new EvenAndOdd();
+            even_or_odd = new EvenAndOddTest();
             winner = even_or_odd.playEvenOrOdd();
             scoreboard(winner, gameChoice, GamesOfGamesScoreboard);
             break;
           case 5:
                 System.out.println("\nYou are playing the Red Thread Game! 1 in the list represents the Red Thread,\n");
-                redThreadGame = new TheRedThreadGame(); // new instance of the game
+                redThreadGame = new TheRedThreadGameTest(); // new instance of the game
                 redThreadGame.fillTheContainerWithThreads(); // repopulate the spools after every game
                 winner = redThreadGame.playTheRedThreadGame();  // the players play ground
                 // set player scoreboard for every game
