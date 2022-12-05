@@ -1,6 +1,13 @@
-/*
- * header
- */
+/**
+ * Class: hidetheThimble
+ * This class implements 'Hide the Thimble' game. In this game, player is playing
+ * against the computer. Player guesses right or left and computer chooses
+ * the hand that they want to hide the thimble in. if player guesses right, then they gets a point, if guessed wrong
+ * computer gets a point. Whoever raches the best out of number first wins the game
+ * @author: Lucas Stowe  
+ * @version 1.0 , 11/30/2022
+ *
+*/
 
 import java.util.*;
 
