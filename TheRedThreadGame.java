@@ -45,7 +45,6 @@ class TheRedThreadGame extends getInput{
      * 20 threads with 1 representing the Red thread
      */
     public void fillTheContainerWithThreads(){
-        Random randomThreads = new Random();
         for(int i = 0; i < numOfThreads; i++) {
             spoolsBox.add(i+1); // values [1, 2,3...]
         }
@@ -164,7 +163,7 @@ class TheRedThreadGame extends getInput{
       }
 
       }
-
+     scanner.close();
       return theWinner; // winner determined
 
     }

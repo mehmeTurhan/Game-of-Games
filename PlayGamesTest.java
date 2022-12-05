@@ -74,6 +74,8 @@ class PlayGamesTest {
       } while(gameChoice != 6);
 
       finalScoreboard(gameChoice, GamesOfGamesScoreboard);
+
+      scanner.close();
   }
 
 

@@ -165,7 +165,7 @@ class TheRedThreadGameBug extends getInput{
       }
 
       }
-
+     scanner.close();
       return theWinner; // winner determined
 
     }

@@ -74,6 +74,7 @@ class PlayGamesBug {
       } while(gameChoice != 6);
 
       finalScoreboard(gameChoice, GamesOfGamesScoreboard);
+      scanner.close();
   }
 
 
