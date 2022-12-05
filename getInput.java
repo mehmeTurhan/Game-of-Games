@@ -131,6 +131,17 @@ public class getInput {
             return playerChoice.charAt(0);
         }
 
+        public String getPlayerChoiceEvenOROdd(){
+
+                System.out.println("'O' for odd number, 'E' for even number");
+                playerChoice = scanner.next();
+                while (!("OE".contains(playerChoice)) ){
+                  System.out.println("Please input 'O' for odd number, 'E' for even number");
+                  playerChoice = scanner.next();
+                }
+            return playerChoice;
+        }
+
 
 
 

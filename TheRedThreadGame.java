@@ -11,7 +11,7 @@
 
 import java.util.*;
 
-class TheRedThreadGame extends GetInput{
+class TheRedThreadGame extends getInput{
     private static int numOfThreads; // total number of threads
     private List<Integer> spoolsBox; // box containing the threads
     private boolean isComputerTheWinner; // computer flag

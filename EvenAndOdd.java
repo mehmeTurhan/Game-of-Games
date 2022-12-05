@@ -15,18 +15,18 @@ public class EvenAndOdd extends getInput{
 	 	if(sum % 2 == 0) {
 	 		System.out.println("The sum is a Even number");
 	 		return "E";
-	 	} 		
+	 	}
 	 	else {
 	 		System.out.println("The sum is a Odd number");
 	 		return "O";
-	 	}	 		
+	 	}
 	 }
 
 	 void winner(String choice, int BestNum) {
 	 	if(even_or_odd().equals(choice)) {
 	 		player_score++;
 	 		System.out.println("\nYou Win!\n");
-	 	}	
+	 	}
 	 	else {
 	 		other_score++;
 	 		System.out.println("\nThe other player Wins!\n");
@@ -54,13 +54,13 @@ public class EvenAndOdd extends getInput{
 
 		// Promot player choose from Even / Odd number.
 		System.out.println("'O' for odd number, 'E' for even number");
-	 	String player_choice = game.getPlayerChoice(4);
+	 	String player_choice = game.getPlayerChoiceEvenOROdd();
 
 	 	// Prompt best out of number
 		int target = game.getBestOfNumber();
 
 		while(player_score < target || other_score < target) {
-			// Promot player enter number from 1-5 
+			// Promot player enter number from 1-5
 	 		int player_number = game.getPlayerNum();
 	 		int another_number = game.getPlayerNum();
 
@@ -72,6 +72,6 @@ public class EvenAndOdd extends getInput{
 
         	// End loop
         	if(player_score == target || other_score == target) break;
-		} 	
+		}
 	 }
 }

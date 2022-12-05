@@ -13,7 +13,7 @@ class PlayGames {
       // game objects
        TheRedThreadGame redThreadGame;
        CoinFlip coinFlipGame;
-       HideTheThimble hideTheThimble;
+       hideTheThimble hideTheThimble;
 
       System.out.println("\n!!!Play the Game of Games!!!\n");
       //displayTheGamesOfGamesMenu();
@@ -26,7 +26,7 @@ class PlayGames {
         switch (gameChoice) {
           case 1:
           System.out.println("\nYou are playing the Hide The Thimble Game!\n");
-          hideTheThimble = new HideTheThimble();
+          hideTheThimble = new hideTheThimble();
           hideTheThimble.startDisplay();
           //hideTheThimble.getBestOfNum();
           hideTheThimble.putThimble();
