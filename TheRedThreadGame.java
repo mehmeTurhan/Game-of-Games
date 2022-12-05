@@ -11,7 +11,7 @@
 
 import java.util.*;
 
-class TheRedThreadGame extends getInput{
+class TheRedThreadGame extends GetInput{
     private static int numOfThreads; // total number of threads
     private List<Integer> spoolsBox; // box containing the threads
     private boolean isComputerTheWinner; // computer flag
@@ -91,7 +91,10 @@ class TheRedThreadGame extends getInput{
             }
             //System.out.println("Index" + randomIndex + " Value:" +  spoolDrawn);
             numOfThreads = numOfThreads - 1; // reduced the spools index
-            randomIndex = random.nextInt(numOfThreads); // generate new random index
+            System.out.println("Threads left: " + numOfThreads);
+            if(numOfThreads != 0) {
+              randomIndex = random.nextInt(numOfThreads);// generate new random index
+            }
             spoolsBox.remove(spoolDrawn); // remove the spools that weren't red
             numberOfSpoolsToPull = numberOfSpoolsToPull - 1;
         }
@@ -102,7 +105,7 @@ class TheRedThreadGame extends getInput{
     * This is the game center. This is where players are playing
     * @returns true 1 if the player1 wins and 2 for the computer
     */
-    public int playGround() {
+    public int playTheRedThreadGame() {
       int numberOfSpoolsToPull;
       int numberOfSpoolsOfPlayer1;
       int theWinner = 0;
@@ -121,7 +124,7 @@ class TheRedThreadGame extends getInput{
         numberOfSpoolsOfPlayer1 = userInputValidationChecks();
       }
 
-      fillTheContainerWithThreads(); // the box with values
+      //fillTheContainerWithThreads(); // the box with values
       drawSpoolsForPlayer1(numberOfSpoolsOfPlayer1); // player1 draws the spools
       drawSpoolsForTheComputer(numberOfSpoolsToPull); // Computer draws the spools
       // if player 1 won
@@ -131,8 +134,8 @@ class TheRedThreadGame extends getInput{
       }
       // check if the Computer won
       if(getisComputerTheWinner()){
-        System.out.println("Computer Won 🍾🍾🍾🍾");
-        return 1;
+        System.out.println("The Computer Won 🍾🍾🍾🍾");
+        return 2;
       }
     // keeps checking as long as there no winner yet
       while(!spoolsBox.isEmpty()) {
@@ -169,5 +172,5 @@ class TheRedThreadGame extends getInput{
       return theWinner; // winner determined
 
     }
-  
+
 }

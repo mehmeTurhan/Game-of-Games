@@ -39,29 +39,6 @@ public class getInput {
       *
       * @return an a string to the caller
       */
-      public String getPlayerChoice(int theChoice){
-
-          if (theChoice == 1){
-            System.out.print("Select choice, H or T: ");
-            playerChoice = scanner.next();
-            while (!("HT".contains(playerChoice)) ){
-                    System.out.print("Input H or T: ");
-                    playerChoice = scanner.next();
-            }
-          } else {
-            if (theChoice == 2){
-              System.out.print("Select Hand, L or R: ");
-              playerChoice = scanner.next();
-              while (!("LR".contains(playerChoice)) ){
-                System.out.println("Select Hand, L or R: ");
-                playerChoice = scanner.next();
-              }
-            }
-          }
-
-          return playerChoice;
-      }
-
 
       /**
       * Validates the player inputs Red TheRedThreadGame
@@ -80,7 +57,7 @@ public class getInput {
 
 
       /*
-      * This is a utility method that prompts 
+      * This is a utility method that prompts
       * player choices for guessTheNumber and returns
       * value of the low point of range to caller
       *
@@ -100,7 +77,7 @@ public class getInput {
 
 
       /*
-      * This is a utility method that prompts 
+      * This is a utility method that prompts
       * player choices for guessTheNumber and returns
       * value of the high point of range to caller
       *
@@ -114,11 +91,48 @@ public class getInput {
             System.out.println("\n"); // formatting output
 
             return rangeHigh;
-    
+
+        }
+
+        /*
+        * This is a utility method that prompts and validates
+        * player choices for hideTheThimble and coinFlip from the user and return
+        * value to the caller of: hideTheThimble, coinFlip
+        *
+        * @return an a string to the caller
+        */
+
+        public String getPlayerChoiceCoinFlip(){
+              System.out.print("Select choice, H or T: ");
+              playerChoice = scanner.next();
+              while (!("HT".contains(playerChoice)) ){
+                      System.out.print("Input H or T: ");
+                      playerChoice = scanner.next();
+              }
+
+            return playerChoice;
+        }
+
+        /*
+        * This is a utility method that prompts and validates
+        * player choices for hideTheThimble and coinFlip from the user and return
+        * value to the caller of: hideTheThimble, coinFlip
+        *
+        * @return an a string to the caller
+        */
+        public char getPlayerChoiceHideTheThimble(){
+
+                System.out.print("Select Hand, L or R: ");
+                playerChoice = scanner.next();
+                while (!("LR".contains(playerChoice)) ){
+                  System.out.println("Select Hand, L or R: ");
+                  playerChoice = scanner.next();
+                }
+            return playerChoice.charAt(0);
         }
 
 
-        
+
 
       /*
       * This is a utility method that prompts and validates
