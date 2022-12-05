@@ -13,12 +13,16 @@
 
 import java.util.Random;
 
-public class coinFlip extends getInput {
+public class CoinFlip extends getInput {
   public static int playerScore=0;   
   public static int computerScore=0;
-  //choice for getPlayer choice class designed for coin flip game
-  private final static int theChoice = 1; 
+  private int isTheWinner;
     
+    public CoinFlip() {
+        playerScore = 0;
+        computerScore = 0;
+        isTheWinner = 0;
+    }
     //Displays the game description
     public static void gameDisplay(){
         System.out.println("The players will specify the “best out of number” for the game. For instance, if they choose 7, a player will win the game if they guessed the flip result 4 times. For each coin flip, the player calling heads or tails will indicate if they choose heads or tails.");
@@ -31,8 +35,8 @@ public class coinFlip extends getInput {
     }
     
     //gets the player's pick using getPlayerChoice(theChoice) from getInput class
-    public  String getPlayerPick(){
-        String playerPick = getPlayerChoice(theChoice);
+    public String getPlayerPick(){
+        String playerPick = getPlayerChoiceCoinFlip();
         return playerPick;
     }
 
@@ -75,26 +79,30 @@ public class coinFlip extends getInput {
     }
 
 //Code test in main
-//   public void main(String[] args) {
-//     gameDisplay();    
-//     String pick="";
-//     String flip="";
+   public int playCoinFlip() {
+    gameDisplay();  
+    String pick="";
+    String flip="";
 
-//     int numFlip=0;
-//     int bestOutofNumber = getBestNumber();
-//     while(!(checkFlipsVsBestNum(bestOutofNumber, numFlip))){
-//         pick = getPlayerPick();
-//         flip = flipCoin();
-//         numFlip += 1;
-//         System.out.println(displayScoreboard(pick, flip));
-//         if(playerScore > (bestOutofNumber/2)){
-//             System.out.println("Player 1 Wins");
-//             break;
-//         }
-//         else if(computerScore > (bestOutofNumber/2) || (checkFlipsVsBestNum(bestOutofNumber, numFlip))){
-//             System.out.println("Player 1 Loses");
-//             break;
-//         }
-//     }
-//   }
+    int numFlip=0;
+    int bestOutofNumber = getBestNumber();
+    while(!(checkFlipsVsBestNum(bestOutofNumber, numFlip))){
+        pick = getPlayerPick();
+        flip = flipCoin();
+        numFlip += 1;
+        System.out.println(displayScoreboard(pick, flip));
+        if(playerScore > (bestOutofNumber/2)){
+            isTheWinner = 1;
+            System.out.println("Player 1 Wins");
+            break;
+        }
+        else if(computerScore > (bestOutofNumber/2) || (checkFlipsVsBestNum(bestOutofNumber, numFlip))){
+            isTheWinner = 2;
+            System.out.println("Player 1 Loses");
+            break;
+        }
+    }
+
+    return isTheWinner;
+  }
 }
