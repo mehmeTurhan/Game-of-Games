@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class EvenAndOdd extends getInput{
+public class EvenAndOddTest extends getInput{
 	 int sum = 0;
 	 public static int player_score = 0;
 	 public static int other_score = 0;
