@@ -78,7 +78,7 @@ class CoinFlip extends getInput {
         return false;
     }
 
-//Code test in main
+//to play the game and return the winner of coin flip
    public int playCoinFlip() {
     gameDisplay();
     String pick="";
